@@ -1,5 +1,6 @@
 //Conditional Statements-->
 
+
 // let color="green";
 // //Traffic light
 // if(color== "red"){
@@ -631,32 +632,36 @@
 
 
 
-let btn = document.querySelector("button");
-let ul = document.querySelector("ul");
-let inp =document.querySelector("input");
 
-btn.addEventListener("click",function(){
-    let item = document.createElement("li");
-    item.innerText = inp.value;
 
-    let delbtn=document.createElement("button");
-    delbtn.innerText="delete";
-    delbtn.classList.add("delete");
+// Todo Activity->
 
-    item.appendChild(delbtn);
-    ul.appendChild(item);
-    console.log(inp.value);
-    inp.value="";
-})
+// let btn = document.querySelector("button");
+// let ul = document.querySelector("ul");
+// let inp =document.querySelector("input");
 
-ul.addEventListener("click",function(event){
-    if(event.target.nodeName == "BUTTON"){
-        let listItem = event.target.parentElement;
-        listItem.remove();
-        console.log("deleted");
-    }
-})
+// btn.addEventListener("click",function(){
+//     let item = document.createElement("li");
+//     item.innerText = inp.value;
 
+//     let delbtn=document.createElement("button");
+//     delbtn.innerText="delete";
+//     delbtn.classList.add("delete");
+
+//     item.appendChild(delbtn);
+//     ul.appendChild(item);
+//     console.log(inp.value);
+//     inp.value="";
+// })
+
+// ul.addEventListener("click",function(event){
+//     if(event.target.nodeName == "BUTTON"){
+//         let listItem = event.target.parentElement;
+//         listItem.remove();
+//         console.log("deleted");
+//     }
+// })
+// ........................
 // let delbtns = document.querySelectorAll(".delete");
 // for(delbtn of delbtns){
 //     delbtn.addEventListener("click", function(){
@@ -665,3 +670,23 @@ ul.addEventListener("click",function(event){
 //         par.remove();
 //     })
 // }
+// ....................................................................
+
+
+
+
+// Promises-->
+
+function savetoDb(data){
+    return new Promise((resolve,reject)=>{
+        let internetSpeed=Math.floor(Math.random()*10);
+        if(internetSpeed > 4){
+            resolve("success : data was saved");
+        }
+        else{
+            reject("failure : weak connection");
+        }
+    })
+}
+
+// ..................................................................................
