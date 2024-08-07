@@ -846,17 +846,17 @@
 
 
 // AXIOS sending Headers--->
-const url = "https://icanhazdadjoke.com/";
+// const url = "https://icanhazdadjoke.com/";
 
-async function getJokes() {
-    try{
-        const config = { headers : { Accept : "application/json"} };
-        let res = await axios.get(url , config);
-        console.log(res.data);
-    }catch(err){
-        console.log(err);
-    }
-}
+// async function getJokes() {
+//     try{
+//         const config = { headers : { Accept : "application/json"} };
+//         let res = await axios.get(url , config);
+//         console.log(res.data);
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
 
 
 // ......................................................................
@@ -864,4 +864,28 @@ async function getJokes() {
 
 
 
-// Activity using Query Strings
+// Activity using Query Strings-->
+
+let url = "http://universities.hipolabs.com/search?name=";
+let btn = document.querySelector("button");
+
+btn.addEventListener("click",async() => {
+    let country = document.querySelector("input").value;
+    console.log(country);
+
+    let  colArr = await getColleges(country);
+    console.log(colArr);
+})
+
+let country = "nepal";
+
+async function getColleges(country) {
+    try{
+       let res =  await axios.get(url + country);
+       return res.data;
+    }
+    catch(e){
+        console.log("error : ",e);
+        return [];
+    }
+}
