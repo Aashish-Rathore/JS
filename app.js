@@ -866,26 +866,31 @@
 
 // Activity using Query Strings-->
 
-let url = "http://universities.hipolabs.com/search?name=";
-let btn = document.querySelector("button");
+// let url = "http://universities.hipolabs.com/search?country=India&name=";
+// let btn = document.querySelector("button");
 
-btn.addEventListener("click",async() => {
-    let country = document.querySelector("input").value;
-    console.log(country);
+// btn.addEventListener("click",async() => {
+//     let state = document.querySelector("input").value;
+//     console.log(state);
 
-    let  colArr = await getColleges(country);
-    console.log(colArr);
-})
+//     let  colArr = await getColleges(state);
+//     console.log(colArr);
+//     colArr.forEach(college => {                                  //for iterating & printing each college
+//         console.log(college.name);
+//     });
+// })
 
-let country = "nepal";
 
-async function getColleges(country) {
-    try{
-       let res =  await axios.get(url + country);
-       return res.data;
-    }
-    catch(e){
-        console.log("error : ",e);
-        return [];
-    }
-}
+// async function getColleges(state) {
+//     try{
+//        let res =  await axios.get(url + state);                               
+//        return res.data;
+//     }
+//     catch(e){
+//         console.log("error : ",e);
+//         return [];
+//     }
+// }
+
+
+// .................................................................
